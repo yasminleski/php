@@ -1,5 +1,5 @@
 <?php
-   class Usuario(){
+   class Usuario{
          private $id, $nome, $email, $login, $senha, $datacadastro, $ativo;
 
       public function getId(){
