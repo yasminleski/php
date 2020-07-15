@@ -5,7 +5,7 @@
 		$email = $_POST["email"];
 		$dataNascimento = $_POST["dataNascimento"];
 	
-		include("pessoa.php");
+		include("Pessoa.php");
 		
 		$cadastrarPessoa = new Pessoa ();
 		

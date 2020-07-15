@@ -58,8 +58,8 @@
 					<tr>
 						<td><?=$i++;?></td>
 						<td><?=$value["nome"];?></td>
-						<td><?=$$value["email"];?></td>
-						<td><?=$$value["telefone"];?></td>
+						<td><?=$value["email"];?></td>
+						<td><?=$value["telefone"];?></td>
 						<td>ALTERAR</td>
 						<td>EXCLUIR</td>
 					</tr>

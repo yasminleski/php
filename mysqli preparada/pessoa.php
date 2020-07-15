@@ -2,7 +2,7 @@
 	class Pessoa{
 		private $id, $nome, $telefone, $email, $dataNascimento;
 		
-	 public function addPessoa($nome, $telefone, $email, $dataNascimento){
+	public function addPessoa($nome, $telefone, $email, $dataNascimento){
 		
 			include ("conexao.php");
 			
@@ -14,7 +14,8 @@
 			$stmt = $conectar->prepare("INSERT INTO pessoa(nome, telefone, email, dataNascimento)
 			  VALUES (?, ?, ?, ?)");
 			  
-			$stmt->bind_param("ssss", $this->getNome(), $this->getTelefone(),$getEmail(),$this->getDataNascimento());
+			//$stmt->bind_param("ssss", $this->getNome(), $this->getTelefone(),$this->getEmail(),$this->getDataNascimento());
+			$stmt->bind_param("ssss", $this->nome, $this->telefone, $this->email,$this->dataNascimento);
 			$stmt->execute();
 			$stmt->close();
 			
@@ -22,11 +23,11 @@
 				return 1;
 			} else{
 				return 0;
-			  }
-	 }
-	 public function relatorioSimples(){
+			}
+	}
+	public function relatorioSimples(){
 		include ("conexao.php");
-		$query = "SELECT id, nome, telefone FROM pessoa";
+		$query = "SELECT id, nome, email, telefone FROM pessoa";
 		$busca = $conectar->query($query);
 		
 		$retornoBanco = array();
